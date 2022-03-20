@@ -2,7 +2,7 @@
 
 
   <ul>
-    <li><a href=https://mborejdo.github.io/artikel1/>Another Year, another blog</a></li><li><a href=https://mborejdo.github.io/artikel2/>Some Codeblock</a></li>
+    <li><a href=https://mborejdo.github.io/til/til1/>Zola</a></li><li><a href=https://mborejdo.github.io/artikel1/>Another Year, another blog</a></li><li><a href=https://mborejdo.github.io/artikel2/>Some Codeblock</a></li>
   </ul>
 
   [:arrow_right: More posts](https://mborejdo.github.io)
