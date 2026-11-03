@@ -13,9 +13,7 @@ terms = [
   "TypeScript", "tsc", "JavaScript", "JS", "NextJS", "ReactNative", "VueJS", "Webcomponents",
   "Tailwind", "nodejs", "PHP", "Symfony", "Composer", "PHPUnit", "Rust", "Kubernetes",
   "ArgoCD", "Docker", "Container", "Terraform", "CI/CD", "Pipelines", "DevOps", "Linux", "unix",
-  "PostgreSQL", "SQL", "OpenAPI", "REST", "API", "Testing", "TDD", "E2E", "Playwright",
-  "Documentation", "Dokumentation", "Azure", "GxP", "GMP", "GDP", "ecommerce", "Pimcore",
-  "StiboDX-CUE", "MSD", "architecture", "AI",
+  "PostgreSQL", "SQL", "OpenAPI", "REST", "API", "Azure", "MSD", "architecture", "AI",
 ]
 
 [style]
@@ -65,12 +63,12 @@ words = [{ text = "TypeScript", related = ["tsc", "typed language", "TS"] }]
 [[tier]]
 weight = 9.5
 color = "accent"
-words = ["Rust"]
+words = [{ text = "Rust", related = ["cargo"] }]
 
 [[tier]]
 weight = 9
 color = "accent"
-words = ["Kubernetes"]
+words = [{ text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }]
 
 [[tier]]
 weight = 8
@@ -80,34 +78,25 @@ words = ["DevOps", "Architecture", "GitOps", "APIs", "Next.js", "React"]
 [[tier]]
 weight = 7
 color = "ink"
-words = ["PHP", "B2B Commerce", "System Design", "MCP", "AI Agents", "OAuth 2.1", "GxP", "Fullstack", "Platform Engineering"]
+words = ["System Design", "Platform Engineering", "MCP", "AI Agents", "Fullstack", "OAuth 2.1"]
 
 [[tier]]
 weight = 6
 color = "ink"
 words = [
-  "JavaScript", "Node.js", "PostgreSQL", "Docker", "Terraform", "Azure", "API Gateway",
-  "Infrastructure as Code", "OpenAPI", "React Native", "Stibo DX", "Media System Design",
+  "JavaScript", "Node.js", "PostgreSQL", "Docker", "Terraform", "Azure", "OpenAPI",
+  "Infrastructure as Code", "React Native", "CLI", "GitHub Actions", "PHP",
 ]
 
 [[tier]]
 weight = 5
 color = "muted"
 words = [
-  "Axum", "Tokio", "OIDC", "REST", "SQL", "Linux", "Redis", "Vue", "Lit", "Web Components",
-  "Tailwind", "Headless Commerce", "Agent Workflows", "RAG", "Tooling", "Developer Portals",
-  "Automated Tests", "Documentation", "Data Processing", "Dashboards",
-]
-
-[[tier]]
-weight = 4
-color = "muted"
-words = [
-  "Python", "C#", "ERP", "PIM", "Search", "SharePoint", "Microsoft Graph", "Object Storage",
-  "Hetzner", "ESLint", "CMS", "Widgets", "Proofs of Concept", "Product Configurator",
+  "Axum", "Tokio", "OIDC", "SQL", "Linux", "Redis", "Vue", "Lit", "Web Components",
+  "Tailwind", "Agent Workflows", "RAG", "Python",
 ]
 
 [[tier]]
 weight = 3
 color = "soft"
-words = ["Flash", "Flex", "ActionScript", "Since 2007"]
+words = ["Media System Design", "Flash", "ActionScript", "Since 2007"]
