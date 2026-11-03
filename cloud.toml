@@ -5,7 +5,7 @@
 #   A tier word is "Text" or { text = "Text", related = ["alias", ...] }.
 #   `terms` fold into the word they belong to (+term_boost each); `--github <user>` adds a small
 #   boost from recent public languages/topics, but only to words listed here.
-#   Order to keep: TypeScript > Rust > Kubernetes (check with `wordcloud cloud.toml --explain`).
+#   Order to keep: TypeScript > Rust > Architecture; Kubernetes is one tool among many (check with `wordcloud cloud.toml --explain`).
 
 # Raw terms that fold into the words above.
 # Each one must fold into a word above; `--explain` flags anything that would become a new word.
@@ -17,10 +17,11 @@ terms = [
 ]
 
 [style]
-width = 1000
-height = 1000
+width = 1600
+height = 600
 seed = 160
-shape = "circle"
+shape = "rect"
+fill = true
 vertical = 0.18   # share of words set vertically (never the top tier)
 gap = 2.0         # min distance between words, canvas px (plus 8% of the font size)
 contrast = 1.5    # size = scale * (weight / 10) ^ contrast
@@ -42,15 +43,15 @@ github_boost = 0.1    # per recent repo
 github_cap = 0.5
 
 [colors]
-accent = "#ff4f00"
+accent = "#5b4fb3"
 ink = "#111318"
 muted = "#5c6370"
 soft = "#9aa0a8"
 
 # Same names, for cloud-dark.svg - same layout, only the colours differ.
-# Contrast on GitHub dark (#0d1117): accent 5.7:1, ink 15.3:1, muted 7.2:1, soft 5.1:1.
+# Contrast on GitHub dark (#0d1117): accent 6.8:1, ink 15.3:1, muted 7.2:1, soft 5.1:1.
 [colors_dark]
-accent = "#ff4f00"
+accent = "#9d8fe8"
 ink = "#e6e7ea"
 muted = "#9aa0a8"
 soft = "#7d8590"
@@ -68,23 +69,23 @@ words = [{ text = "Rust", related = ["cargo"] }]
 [[tier]]
 weight = 9
 color = "accent"
-words = [{ text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }]
+words = [{ text = "Architecture", related = ["software architecture", "architect"] }]
 
 [[tier]]
 weight = 8
 color = "ink"
-words = ["DevOps", "Architecture", "GitOps", "APIs", "Next.js", "React"]
+words = ["DevOps", "System Design", "APIs", "Next.js", "React", "Platform Engineering"]
 
 [[tier]]
 weight = 7
 color = "ink"
-words = ["System Design", "Platform Engineering", "MCP", "AI Agents", "Fullstack", "OAuth 2.1"]
+words = ["MCP", "AI Agents", "Fullstack", "OAuth 2.1", "Docker", { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }, "GitOps"]
 
 [[tier]]
 weight = 6
 color = "ink"
 words = [
-  "JavaScript", "Node.js", "PostgreSQL", "Docker", "Terraform", "Azure", "OpenAPI",
+  "JavaScript", "Node.js", "PostgreSQL", "Nomad", "Terraform", "Azure", "OpenAPI",
   "Infrastructure as Code", "React Native", "CLI", "GitHub Actions", "PHP",
 ]
 
@@ -99,4 +100,4 @@ words = [
 [[tier]]
 weight = 3
 color = "soft"
-words = ["Media System Design", "Flash", "ActionScript", "Since 2007"]
+words = ["Media System Design", "Flash", "ActionScript"]
