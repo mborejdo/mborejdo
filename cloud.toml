@@ -1,0 +1,94 @@
+# Example word list - the cloud on github.com/mborejdo.
+# Favourite words from the three languages in my life: German, Polish, Finnish.
+
+terms = []
+
+[style]
+width = 1000
+height = 1000
+seed = 160
+shape = "circle"
+vertical = 0.18   # share of words set vertically (never the top tier)
+gap = 2.0         # min distance between words, canvas px (plus 8% of the font size)
+contrast = 1.5    # size = scale * (weight / 10) ^ contrast
+
+[semantic]
+backend = "offline"   # or "embed": OpenAI-compatible endpoint, sends the word list only
+term_boost = 0.35
+term_cap = 1.0
+mention_boost = 0.15
+mention_cap = 6
+new_weight = 3.0      # raw terms that match nothing become words of this weight
+new_color = "soft"
+# endpoint = "http://localhost:11434/v1/embeddings"
+# model = "nomic-embed-text"
+# threshold = 0.8
+# Live boost with `--github <user>`: languages and topics of the most recently pushed public
+# repos. They only boost words above - anything that does not fold into a curated word is ignored.
+github_boost = 0.1    # per recent repo
+github_cap = 0.5
+
+[colors]
+accent = "#ff4f00"
+ink = "#111318"
+muted = "#5c6370"
+soft = "#9aa0a8"
+
+# Same names, for cloud-dark.svg - same layout, only the colours differ.
+# Contrast on GitHub dark (#0d1117): accent 5.7:1, ink 15.3:1, muted 7.2:1, soft 5.1:1.
+[colors_dark]
+accent = "#ff4f00"
+ink = "#e6e7ea"
+muted = "#9aa0a8"
+soft = "#7d8590"
+
+[[tier]]
+weight = 10
+color = "accent"
+words = ["Kalsarikännit"]
+
+[[tier]]
+weight = 9.5
+color = "accent"
+words = ["Schnapsidee"]
+
+[[tier]]
+weight = 9
+color = "accent"
+words = ["Chrząszcz"]
+
+[[tier]]
+weight = 8
+color = "ink"
+words = ["Sisu", "Feierabend", "Kombinować", "Kummerspeck"]
+
+[[tier]]
+weight = 7
+color = "ink"
+words = ["Löyly", "Verschlimmbessern", "Szczebrzeszyn", "Ohrwurm", "Pierogi", "Poronkusema"]
+
+[[tier]]
+weight = 6
+color = "ink"
+words = ["Treppenwitz", "Sitzfleisch", "Kaamos", "Bigos", "Fremdschämen", "Sauna", "Na zdrowie", "Gemütlichkeit"]
+
+[[tier]]
+weight = 5
+color = "muted"
+words = [
+  "Drachenfutter", "Torschlusspanik", "Myötähäpeä", "Kac", "Purzelbaum", "Zungenbrecher",
+  "Weltschmerz", "Smacznego", "Morkkis", "Warmduscher", "Fernweh", "Załatwić",
+]
+
+[[tier]]
+weight = 4
+color = "muted"
+words = [
+  "Hyppytyynytyydytys", "Handschuhschneeballwerfer", "Kiełbasa", "Ogórki", "Salmiakki",
+  "Fingerspitzengefühl", "Brezel", "Mökki", "Żubr", "Schadenfreude", "Sauerkraut",
+]
+
+[[tier]]
+weight = 3
+color = "soft"
+words = ["Gänsehaut", "Kartoffel", "Pączki", "Joulupukki"]

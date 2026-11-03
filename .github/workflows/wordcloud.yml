@@ -1,0 +1,43 @@
+# For a profile repo (e.g. you/you): .github/workflows/wordcloud.yml
+# Renders cloud.toml once a day with a fresh seed, so the layout reshuffles, and on every
+# change to the word list. Public data only: the word list itself.
+name: wordcloud
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+  push:
+    paths: [cloud.toml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wordcloud
+  cancel-in-progress: false
+
+jobs:
+  cloud:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: mborejdo/wordcloud@v1
+        with:
+          wordlist: cloud.toml
+          out: cloud.svg
+          png: "2"
+          seed: ${{ github.run_number }}
+
+      - name: Commit if changed
+        run: |
+          git add cloud.svg cloud-dark.svg cloud.png cloud-dark.png
+          if git diff --cached --quiet; then
+            echo "cloud unchanged - nothing to commit"
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Update word cloud"
+          git push
