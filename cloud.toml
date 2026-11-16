@@ -12,8 +12,9 @@
 terms = [
   "TypeScript", "tsc", "JavaScript", "JS", "NextJS", "ReactNative", "VueJS", "Webcomponents",
   "Tailwind", "nodejs", "PHP", "Symfony", "Composer", "PHPUnit", "Rust", "Kubernetes",
-  "ArgoCD", "Docker", "Container", "Terraform", "CI/CD", "Pipelines", "DevOps", "Linux", "unix",
-  "PostgreSQL", "SQL", "OpenAPI", "REST", "API", "Azure", "MSD", "architecture", "AI",
+  "ArgoCD", "Docker", "Container", "Nomad", "Terraform", "CI/CD", "Pipelines", "DevOps", "Linux", "unix",
+  "PostgreSQL", "SQL", "OpenAPI", "REST", "API", "Testing", "TDD", "E2E", "Playwright",
+  "Documentation", "Azure", "GxP", "ecommerce", "MSD", "architecture", "AI",
 ]
 
 [style]
@@ -74,30 +75,44 @@ words = [{ text = "Architecture", related = ["software architecture", "architect
 [[tier]]
 weight = 8
 color = "ink"
-words = ["DevOps", "System Design", "APIs", "Next.js", "React", "Platform Engineering"]
+words = ["DevOps", "AI Agents", "APIs", "Next.js", "React", "System Design", "Systems Thinking"]
 
 [[tier]]
 weight = 7
 color = "ink"
-words = ["MCP", "AI Agents", "Fullstack", "OAuth 2.1", "Docker", { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }, "GitOps"]
+words = [
+  "PHP", "B2B Commerce", "API Design", "Integration Architecture",
+  { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }, "GitOps", "MCP", "OAuth 2.1",
+  "GxP", "Fullstack", "Platform Engineering",
+]
 
 [[tier]]
 weight = 6
 color = "ink"
 words = [
-  "JavaScript", "Node.js", "PostgreSQL", "Nomad", "Terraform", "Azure", "OpenAPI",
-  "Infrastructure as Code", "React Native", "CLI", "GitHub Actions", "PHP",
+  "JavaScript", "Node.js", "PostgreSQL", "Docker", "Nomad", "Terraform", "Azure", "API Gateway",
+  "Infrastructure as Code", "OpenAPI", "React Native", "Stibo DX", "Media System Design",
+  "CLI", "GitHub Actions",
 ]
 
 [[tier]]
 weight = 5
 color = "muted"
 words = [
-  "Axum", "Tokio", "OIDC", "SQL", "Linux", "Redis", "Vue", "Lit", "Web Components",
-  "Tailwind", "Agent Workflows", "RAG", "Python",
+  "Axum", "Tokio", "OIDC", "REST", "SQL", "Linux", "Redis", "Vue", "Lit", "Web Components",
+  "Tailwind", "Headless Commerce", "Agent Workflows", "RAG", "Tooling", "Developer Portals",
+  "Automated Tests", "Documentation", "Data Processing", "Dashboards", "OPC UA",
+]
+
+[[tier]]
+weight = 4
+color = "muted"
+words = [
+  "Python", "C#", "ERP", "PIM", "Search", "SharePoint", "Microsoft Graph", "Object Storage",
+  "Hetzner", "ESLint", "CMS", "Widgets", "Proofs of Concept", "Product Configurator",
 ]
 
 [[tier]]
 weight = 3
 color = "soft"
-words = ["Media System Design", "Flash", "ActionScript"]
+words = ["Flash", "Flex", "ActionScript"]
