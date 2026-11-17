@@ -89,8 +89,8 @@ words = [
 weight = 7
 color = "slate"
 words = [
-  { text = "ADRs", related = ["ADR", "architecture decision records"] }, { text = "Observability", related = ["tracing"] }, "Release Gates",
-  "DevOps", "APIs", { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }, "GitOps", "MCP", "OAuth 2.1",
+  { text = "ADRs", related = ["ADR", "architecture decision records"] }, { text = "Observability", related = ["tracing"], variants = ["Loki", "Prometheus", "Grafana"] }, "Release Gates",
+  "DevOps", "APIs", { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"], variants = ["AKS", "k3s", "kind"] }, { text = "GitOps", variants = ["Kustomize"] }, "MCP", "OAuth 2.1",
   "GxP", "B2B Commerce", { text = "Document Engine", related = ["document engine"] },
   { text = "Auth Broker", related = ["auth broker", "token"] },
 ]
@@ -100,7 +100,7 @@ weight = 6
 color = "muted"
 words = [
   "Next.js", "React", "Node.js", "PostgreSQL", "Docker", "Nomad", "Terraform", "Azure", "API Gateway",
-  "Infrastructure as Code", "OpenAPI", "Headless Commerce", "Fullstack", "Stibo DX", "Media System Design",
+  "Infrastructure as Code", "OpenAPI", { text = "Headless Commerce", variants = ["Medusa"] }, "Fullstack", "Stibo DX", "Media System Design",
   "Audit Trails", { text = "SAP Integration", related = ["SAP"] }, "Release Automation", { text = "Supply-Chain Security", related = ["supply-chain", "supply-chain checks"] }, { text = "Reproducible Builds", related = ["reproducible"] },
   "CLI", "GitHub Actions",
 ]
@@ -109,17 +109,17 @@ words = [
 weight = 5
 color = "mist"
 words = [
-  "PHP", "JavaScript", "React Native", "Axum", "Tokio", "OIDC", "REST", "SQL", "Linux", "Redis", "Vue",
-  "Lit", "Web Components", "Tailwind", "Agent Workflows", "RAG", "Tooling", "Developer Portals",
-  "Automated Tests", "Documentation", "Data Processing", "Dashboards", "OPC UA",
-  "Design Tokens", "Pentest Remediation", "Typst", "Entra ID",
+  "PHP", "JavaScript", "React Native", "Axum", "Tokio", { text = "OIDC", variants = ["DCR"] }, "REST", "SQL", { text = "Linux", variants = ["Debian", "Ubuntu", "Alpine"] }, { text = "Redis", variants = ["DragonFly"] }, "Vue",
+  "Lit", "Web Components", "Tailwind", { text = "Agent Workflows", variants = ["Claude Code", "Codex", "Cursor"] }, "RAG", { text = "Tooling", variants = ["Turborepo", "pnpm"] }, "Developer Portals",
+  { text = "Automated Tests", variants = ["Jest", "Playwright"] }, "Documentation", { text = "Data Processing", variants = ["DataFusion", "Delta Lake"] }, "Dashboards", { text = "OPC UA", variants = ["MQTT"] },
+  "Design Tokens", { text = "Security Hardening", related = ["pentest", "penetration test", "hardened"] }, "Typst", "Entra ID",
 ]
 
 [[tier]]
 weight = 4
 color = "soft"
 words = [
-  "Python", "C#", "ERP", "PIM", "Search", "SharePoint", "Microsoft Graph", "Object Storage",
+  "Python", "C#", "ERP", { text = "PIM", variants = ["Pimcore"] }, { text = "Search", variants = ["Algolia"] }, "SharePoint", "Microsoft Graph", "Object Storage",
   "Hetzner", "ESLint", "Preact", "swc", "Biome", "CMS", "Widgets", "Proofs of Concept", "Product Configurator",
 ]
 
