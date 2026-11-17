@@ -5,16 +5,15 @@
 #   A tier word is "Text" or { text = "Text", related = ["alias", ...] }.
 #   `terms` fold into the word they belong to (+term_boost each); `--github <user>` adds a small
 #   boost from recent public languages/topics, but only to words listed here.
-#   Order to keep: TypeScript > Rust > Architecture; Kubernetes is one tool among many (check with `wordcloud cloud.toml --explain`).
+#   Order to keep: Software Architecture > System Design > TypeScript, Rust; Kubernetes is one tool among many (check with `wordcloud cloud.toml --explain`).
 
 # Raw terms that fold into the words above.
 # Each one must fold into a word above; `--explain` flags anything that would become a new word.
 terms = [
-  "TypeScript", "tsc", "JavaScript", "JS", "NextJS", "ReactNative", "VueJS", "Webcomponents",
-  "Tailwind", "nodejs", "PHP", "Symfony", "Composer", "PHPUnit", "Rust", "Kubernetes",
-  "ArgoCD", "Docker", "Container", "Nomad", "Terraform", "CI/CD", "Pipelines", "DevOps", "Linux", "unix",
-  "PostgreSQL", "SQL", "OpenAPI", "REST", "API", "Testing", "TDD", "E2E", "Playwright",
-  "Documentation", "Azure", "GxP", "ecommerce", "MSD", "architecture", "AI",
+  "Kubernetes", "ArgoCD", "Docker", "Container", "Nomad", "Terraform", "CI/CD", "Pipelines",
+  "DevOps", "Linux", "unix", "PostgreSQL", "SQL", "OpenAPI", "REST", "API", "Testing", "TDD",
+  "E2E", "Playwright", "Documentation", "Azure", "GxP", "ecommerce", "MSD", "architecture", "AI",
+  "ADR", "integration", "observability", "OAuth", "OIDC", "platform", "release gate",
 ]
 
 [style]
@@ -45,68 +44,77 @@ github_cap = 0.5
 
 [colors]
 accent = "#5b4fb3"
+violet = "#8378cc"
 ink = "#111318"
+slate = "#363c48"
 muted = "#5c6370"
-soft = "#9aa0a8"
+mist = "#80868f"
+soft = "#a3a9b1"
 
 # Same names, for cloud-dark.svg - same layout, only the colours differ.
-# Contrast on GitHub dark (#0d1117): accent 6.8:1, ink 15.3:1, muted 7.2:1, soft 5.1:1.
+# One step per tier, from accent down to soft; dark runs the same ramp from bright to dim.
 [colors_dark]
-accent = "#9d8fe8"
+accent = "#a597f0"
+violet = "#8a7fd0"
 ink = "#e6e7ea"
+slate = "#c4c8cf"
 muted = "#9aa0a8"
-soft = "#7d8590"
+mist = "#80878f"
+soft = "#646b74"
 
 [[tier]]
 weight = 10
 color = "accent"
-words = [{ text = "TypeScript", related = ["tsc", "typed language", "TS"] }]
+words = [{ text = "Software Architecture", related = ["architecture", "architect"] }]
 
 [[tier]]
 weight = 9.5
 color = "accent"
-words = [{ text = "Rust", related = ["cargo"] }]
+words = ["System Design", "Platform Engineering"]
 
 [[tier]]
 weight = 9
-color = "accent"
-words = [{ text = "Architecture", related = ["software architecture", "architect"] }]
+color = "violet"
+words = [{ text = "Systems Integration", related = ["integration", "integration architecture"] }, "API Design"]
 
 [[tier]]
 weight = 8
 color = "ink"
-words = ["DevOps", "AI Agents", "APIs", "Next.js", "React", "System Design", "Systems Thinking"]
+words = [
+  { text = "TypeScript", related = ["tsc", "typed language", "TS"] }, { text = "Rust", related = ["cargo"] },
+  "AI Agents", "Systems Thinking",
+]
 
 [[tier]]
 weight = 7
-color = "ink"
+color = "slate"
 words = [
-  "PHP", "B2B Commerce", "API Design", "Integration Architecture",
-  { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }, "GitOps", "MCP", "OAuth 2.1",
-  "GxP", "Fullstack", "Platform Engineering",
+  { text = "ADRs", related = ["ADR", "architecture decision records"] }, "Observability", "Release Gates",
+  "DevOps", "APIs", { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }, "GitOps", "MCP", "OAuth 2.1",
+  "GxP", "B2B Commerce",
 ]
 
 [[tier]]
 weight = 6
-color = "ink"
+color = "muted"
 words = [
-  "JavaScript", "Node.js", "PostgreSQL", "Docker", "Nomad", "Terraform", "Azure", "API Gateway",
-  "Infrastructure as Code", "OpenAPI", "React Native", "Stibo DX", "Media System Design",
+  "Next.js", "React", "Node.js", "PostgreSQL", "Docker", "Nomad", "Terraform", "Azure", "API Gateway",
+  "Infrastructure as Code", "OpenAPI", "Headless Commerce", "Fullstack", "Stibo DX", "Media System Design",
   "CLI", "GitHub Actions",
 ]
 
 [[tier]]
 weight = 5
-color = "muted"
+color = "mist"
 words = [
-  "Axum", "Tokio", "OIDC", "REST", "SQL", "Linux", "Redis", "Vue", "Lit", "Web Components",
-  "Tailwind", "Headless Commerce", "Agent Workflows", "RAG", "Tooling", "Developer Portals",
+  "PHP", "JavaScript", "React Native", "Axum", "Tokio", "OIDC", "REST", "SQL", "Linux", "Redis", "Vue",
+  "Lit", "Web Components", "Tailwind", "Agent Workflows", "RAG", "Tooling", "Developer Portals",
   "Automated Tests", "Documentation", "Data Processing", "Dashboards", "OPC UA",
 ]
 
 [[tier]]
 weight = 4
-color = "muted"
+color = "soft"
 words = [
   "Python", "C#", "ERP", "PIM", "Search", "SharePoint", "Microsoft Graph", "Object Storage",
   "Hetzner", "ESLint", "CMS", "Widgets", "Proofs of Concept", "Product Configurator",
