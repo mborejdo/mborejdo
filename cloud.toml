@@ -13,7 +13,7 @@ terms = [
   "Kubernetes", "ArgoCD", "Docker", "Container", "Nomad", "Terraform", "CI/CD", "Pipelines",
   "DevOps", "Linux", "unix", "PostgreSQL", "SQL", "OpenAPI", "REST", "API", "Testing", "TDD",
   "E2E", "Playwright", "Documentation", "Azure", "GxP", "ecommerce", "MSD", "architecture", "AI",
-  "ADR", "integration", "observability", "OAuth", "OIDC", "platform", "release gate",
+  "ADR", "integration", "observability", "OAuth", "OIDC", "platform", "release gate", "tracing", "SAP", "supply-chain", "reproducible",
 ]
 
 [style]
@@ -82,16 +82,17 @@ weight = 8
 color = "ink"
 words = [
   { text = "TypeScript", related = ["tsc", "typed language", "TS"] }, { text = "Rust", related = ["cargo"] },
-  "AI Agents", "Systems Thinking",
+  "AI Agents", "Systems Thinking", { text = "SDK Design", related = ["SDK", "SDKs", "crates"] },
 ]
 
 [[tier]]
 weight = 7
 color = "slate"
 words = [
-  { text = "ADRs", related = ["ADR", "architecture decision records"] }, "Observability", "Release Gates",
+  { text = "ADRs", related = ["ADR", "architecture decision records"] }, { text = "Observability", related = ["tracing"] }, "Release Gates",
   "DevOps", "APIs", { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"] }, "GitOps", "MCP", "OAuth 2.1",
-  "GxP", "B2B Commerce",
+  "GxP", "B2B Commerce", { text = "Document Engine", related = ["document engine"] },
+  { text = "Auth Broker", related = ["auth broker", "token"] },
 ]
 
 [[tier]]
@@ -100,6 +101,7 @@ color = "muted"
 words = [
   "Next.js", "React", "Node.js", "PostgreSQL", "Docker", "Nomad", "Terraform", "Azure", "API Gateway",
   "Infrastructure as Code", "OpenAPI", "Headless Commerce", "Fullstack", "Stibo DX", "Media System Design",
+  "Audit Trails", { text = "SAP Integration", related = ["SAP"] }, "Release Automation", { text = "Supply-Chain Security", related = ["supply-chain", "supply-chain checks"] }, { text = "Reproducible Builds", related = ["reproducible"] },
   "CLI", "GitHub Actions",
 ]
 
@@ -110,6 +112,7 @@ words = [
   "PHP", "JavaScript", "React Native", "Axum", "Tokio", "OIDC", "REST", "SQL", "Linux", "Redis", "Vue",
   "Lit", "Web Components", "Tailwind", "Agent Workflows", "RAG", "Tooling", "Developer Portals",
   "Automated Tests", "Documentation", "Data Processing", "Dashboards", "OPC UA",
+  "Design Tokens", "Pentest Remediation", "Typst", "Entra ID",
 ]
 
 [[tier]]
@@ -117,7 +120,7 @@ weight = 4
 color = "soft"
 words = [
   "Python", "C#", "ERP", "PIM", "Search", "SharePoint", "Microsoft Graph", "Object Storage",
-  "Hetzner", "ESLint", "CMS", "Widgets", "Proofs of Concept", "Product Configurator",
+  "Hetzner", "ESLint", "Preact", "swc", "Biome", "CMS", "Widgets", "Proofs of Concept", "Product Configurator",
 ]
 
 [[tier]]
