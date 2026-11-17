@@ -75,14 +75,14 @@ words = ["System Design", "Platform Engineering"]
 [[tier]]
 weight = 9
 color = "violet"
-words = [{ text = "Systems Integration", related = ["integration", "integration architecture"] }, "API Design"]
+words = [{ text = "Enterprise Integration", related = ["integration", "integration architecture", "Systems Integration"] }, "API Design"]
 
 [[tier]]
 weight = 8
 color = "ink"
 words = [
   { text = "TypeScript", related = ["tsc", "typed language", "TS"] }, { text = "Rust", related = ["cargo"] },
-  "AI Agents", "Systems Thinking", { text = "SDK Design", related = ["SDK", "SDKs", "crates"] },
+  "AI Agents", { text = "SDK Design", related = ["SDK", "SDKs", "crates"] },
 ]
 
 [[tier]]
@@ -100,7 +100,7 @@ weight = 6
 color = "muted"
 words = [
   "Next.js", "React", "Node.js", "PostgreSQL", "Docker", "Nomad", "Terraform", "Azure", "API Gateway",
-  "Infrastructure as Code", "OpenAPI", { text = "Headless Commerce", variants = ["Medusa"] }, "Fullstack", "Stibo DX", "Media System Design",
+  "Infrastructure as Code", "OpenAPI", { text = "Headless Commerce", variants = ["Medusa"] }, "Fullstack", "Stibo DX", { text = "Media Design", related = ["MSD", "Media System Design"] },
   "Audit Trails", { text = "SAP Integration", related = ["SAP"] }, "Release Automation", { text = "Supply-Chain Security", related = ["supply-chain", "supply-chain checks"] }, { text = "Reproducible Builds", related = ["reproducible"] },
   "CLI", "GitHub Actions",
 ]
