@@ -1,8 +1,11 @@
-# Renders cloud.toml on every change to the word list (or by hand) as static SVG and PNG clouds.
+# Renders cloud.toml as static SVG and PNG clouds once a day with a fresh seed, so the layout
+# reshuffles, and on every change to the word list (or by hand).
 # Public data only: the word list plus recent public GitHub languages/topics.
 name: wordcloud
 
 on:
+  schedule:
+    - cron: "0 5 * * *"
   workflow_dispatch:
   push:
     paths: [cloud.toml]
