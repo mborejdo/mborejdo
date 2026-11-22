@@ -17,6 +17,7 @@ terms = [
 ]
 
 [style]
+font = "fonts/InterDisplay-Black.otf"   # the fat face of the film below (OFL, fonts/)
 width = 1600
 height = 600
 seed = 160
