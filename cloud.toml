@@ -28,58 +28,59 @@ contrast = 1.5    # size = scale * (weight / 10) ^ contrast
 
 [semantic]
 backend = "offline"   # or "embed": OpenAI-compatible endpoint, sends the word list only
-term_boost = 0.35
-term_cap = 1.0
-mention_boost = 0.15
-mention_cap = 6
-new_weight = 3.0      # raw terms that match nothing become words of this weight
-new_color = "soft"
+term-boost = 0.35
+term-cap = 1.0
+mention-boost = 0.15
+mention-cap = 6
+new-weight = 3.0      # raw terms that match nothing become words of this weight
+new-colour = "soft"
 # endpoint = "http://localhost:11434/v1/embeddings"
 # model = "nomic-embed-text"
 # threshold = 0.8
 # Live boost with `--github <user>`: languages and topics of the most recently pushed public
 # repos. They only boost words above - anything that does not fold into a curated word is ignored.
-github_boost = 0.1    # per recent repo
-github_cap = 0.5
+github-boost = 0.1    # per recent repo
+github-cap = 0.5
 
-[colors]
-accent = "#5b4fb3"
-violet = "#8378cc"
-ink = "#111318"
-slate = "#363c48"
-muted = "#5c6370"
-mist = "#80868f"
-soft = "#a3a9b1"
+[colours]
+accent = "#1d6fb8"
+sky = "#3f86c6"
+ink = "#1d2129"
+slate = "#3a4150"
+muted = "#606a7e"
+mist = "#7d8596"
+soft = "#a0a7b4"
 
 # Same names, for cloud-dark.svg - same layout, only the colours differ.
 # One step per tier, from accent down to soft; dark runs the same ramp from bright to dim.
-[colors_dark]
-accent = "#a597f0"
-violet = "#8a7fd0"
-ink = "#e6e7ea"
-slate = "#c4c8cf"
-muted = "#9aa0a8"
-mist = "#80878f"
-soft = "#646b74"
+# The blues and greys are the shared tokens (accent, ink, muted), same as the film below.
+[colours-dark]
+accent = "#7cc4fa"
+sky = "#5aa9e6"
+ink = "#e8e6e3"
+slate = "#c6c9d1"
+muted = "#8b93a7"
+mist = "#6f7789"
+soft = "#575e6e"
 
 [[tier]]
 weight = 10
-color = "accent"
+colour = "accent"
 words = [{ text = "Software Architecture", related = ["architecture", "architect"] }]
 
 [[tier]]
 weight = 9.5
-color = "accent"
+colour = "accent"
 words = ["System Design", "Platform Engineering"]
 
 [[tier]]
 weight = 9
-color = "violet"
+colour = "sky"
 words = [{ text = "Enterprise Integration", related = ["integration", "integration architecture", "Systems Integration"] }, "API Design"]
 
 [[tier]]
 weight = 8
-color = "ink"
+colour = "ink"
 words = [
   { text = "TypeScript", related = ["tsc", "typed language", "TS"] }, { text = "Rust", related = ["cargo"] },
   "AI Agents", { text = "SDK Design", related = ["SDK", "SDKs", "crates"] },
@@ -87,7 +88,7 @@ words = [
 
 [[tier]]
 weight = 7
-color = "slate"
+colour = "slate"
 words = [
   { text = "ADRs", related = ["ADR", "architecture decision records"] }, { text = "Observability", related = ["tracing"], variants = ["Loki", "Prometheus", "Grafana"] }, "Release Gates",
   "DevOps", "APIs", { text = "Kubernetes", related = ["k8s", "kubectl", "Helm"], variants = ["AKS", "k3s", "kind"] }, { text = "GitOps", variants = ["Kustomize"] }, "MCP", "OAuth 2.1",
@@ -97,7 +98,7 @@ words = [
 
 [[tier]]
 weight = 6
-color = "muted"
+colour = "muted"
 words = [
   "Next.js", "React", "Node.js", "PostgreSQL", "Docker", "Nomad", "Terraform", "Azure", "API Gateway",
   "Infrastructure as Code", "OpenAPI", { text = "Headless Commerce", variants = ["Medusa"] }, "Fullstack", "Stibo DX", { text = "Media Design", related = ["MSD", "Media System Design"] },
@@ -107,7 +108,7 @@ words = [
 
 [[tier]]
 weight = 5
-color = "mist"
+colour = "mist"
 words = [
   "PHP", "JavaScript", "React Native", "Axum", "Tokio", { text = "OIDC", variants = ["DCR"] }, "REST", "SQL", { text = "Linux", variants = ["Debian", "Ubuntu", "Alpine"] }, { text = "Redis", variants = ["DragonFly"] }, "Vue",
   "Lit", "Web Components", "Tailwind", { text = "Agent Workflows", variants = ["Claude Code", "Codex", "Cursor"] }, "RAG", { text = "Tooling", variants = ["Turborepo", "pnpm"] }, "Developer Portals",
@@ -117,7 +118,7 @@ words = [
 
 [[tier]]
 weight = 4
-color = "soft"
+colour = "soft"
 words = [
   "Python", "C#", "ERP", { text = "PIM", variants = ["Pimcore"] }, { text = "Search", variants = ["Algolia"] }, "SharePoint", "Microsoft Graph", "Object Storage",
   "Hetzner", "ESLint", "Preact", "swc", "Biome", "CMS", "Widgets", "Proofs of Concept", "Product Configurator",
@@ -125,5 +126,5 @@ words = [
 
 [[tier]]
 weight = 3
-color = "soft"
+colour = "soft"
 words = ["Flash", "Flex", "ActionScript"]
