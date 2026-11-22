@@ -1,4 +1,3 @@
-# For a profile repo (e.g. you/you): .github/workflows/wordcloud.yml
 # Renders cloud.toml once a day with a fresh seed, so the layout reshuffles, and on every
 # change to the word list. Public data only: the word list plus recent public GitHub languages/topics.
 name: wordcloud
@@ -21,7 +20,7 @@ jobs:
   cloud:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - uses: mborejdo/wordcloud@v3
         with:
