@@ -27,6 +27,8 @@ jobs:
           out: cloud.svg
           png: "2"
           gif: "true"
+          once: "true"
+          delay: "1"
           seed: ${{ github.run_number }}
           github-user: ${{ github.repository_owner }}
 
