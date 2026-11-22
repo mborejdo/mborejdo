@@ -3,7 +3,7 @@
 #
 #   One tier = one base weight (10 = biggest). Order inside a tier does not matter, the seed shuffles it.
 #   A tier word is "Text" or { text = "Text", related = ["alias", ...] }.
-#   `terms` fold into the word they belong to (+term_boost each); `--github <user>` adds a small
+#   `terms` fold into the word they belong to (+term-boost each); `--github <user>` adds a small
 #   boost from recent public languages/topics, but only to words listed here.
 #   Order to keep: Software Architecture > System Design > TypeScript, Rust; Kubernetes is one tool among many (check with `wordcloud cloud.toml --explain`).
 
